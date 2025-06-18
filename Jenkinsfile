@@ -3,6 +3,7 @@ pipeline {
     
     tools {
         maven 'maven3'
+        jdk 'jdk17'
     }
     
     parameters {
@@ -12,8 +13,6 @@ pipeline {
     }
     
     environment {
-        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
-        PATH = "${JAVA_HOME}/bin:${env.PATH}"
         IMAGE_NAME = "yogesh2024/bankapp"
         TAG = "${params.DOCKER_TAG}"
         KUBE_NAMESPACE = 'webapps'
